@@ -2,9 +2,6 @@
 ---
 dist: bionic
 language: python
-arch:
-    - amd64
-    - ppc64le
 env:
   global:
     - LSR_ANSIBLES='ansible==2.7.* ansible==2.8.* ansible==2.9.*'
@@ -13,11 +10,30 @@ matrix:
   include:
     - python: 2.6
       dist: trusty
+      arch: amd64
     - python: 2.7
+      arch: amd64
     - python: 3.6
+      arch: amd64
     - python: 3.7
+      arch: amd64
     - python: 3.8
+      arch: amd64
     - python: 3.8-dev
+      arch: amd64
+    - python: 2.6
+      dist: trusty
+      arch: ppc64le
+    - python: 2.7
+      arch: ppc64le
+    - python: 3.6
+      arch: ppc64le
+    - python: 3.7
+      arch: ppc64le
+    - python: 3.8
+      arch: ppc64le
+    - python: 3.8-dev
+      arch: ppc64le
 
 services:
   - docker
